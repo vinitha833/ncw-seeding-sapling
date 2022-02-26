@@ -67,7 +67,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'vini','vinithakumarasamy@gmail.com','14e1b600b1fd579f47433b88e8d85291','9165063741','palladam','smp'),(2,'jackin','jackin@gmail.com','14e1b600b1fd579f47433b88e8d85291','5656325698','palladam','address');
+INSERT INTO `users` VALUES (1,'vini','vinikumarasamy@gmail.com','14e1b600b1fd579f47433b88e8d85291','9165063741','palladam','smp'),(2,'jagulin','jagulinmary02@gmail.com','14e1b600b1fd579f47433b88e8d85291','5656325698','palladam','address');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
