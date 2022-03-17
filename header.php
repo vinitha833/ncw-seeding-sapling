@@ -11,7 +11,7 @@ require 'connection.php';
 
 <head>
     <!-- <link rel="shortcut icon" href="img/seeding-slaping-1.jpeg" /> -->
-    <title>NCW SEEDING AND SLAPING</title>
+    <title>Virtual outlet site</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- latest compiled and minified CSS -->
