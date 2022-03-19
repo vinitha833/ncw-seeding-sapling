@@ -10,7 +10,7 @@ require 'connection.php';
 <html>
 
 <head>
-    <!-- <link rel="shortcut icon" href="img/seeding-slaping-1.jpeg" /> -->
+    <!-- <link rel="shortcut icon" href="img/seeding-sapling-1.jpeg" /> -->
     <title>Virtual outlet site</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@ require 'connection.php';
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-            <a href="index.php" class="navbar-brand">SEEDING AND SLAPING</a>
+            <a href="index.php" class="navbar-brand">SEEDING AND SAPLING</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

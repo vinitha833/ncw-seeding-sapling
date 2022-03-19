@@ -27,7 +27,7 @@
 <div class="shoping-page">
     <div class="container">
         <div class="jumbotron">
-            <h2 class="text-center">Online purchase seedling and saplings to sow & grow</h2>
+            <h2 class="text-center">VIRTUAL OUTLET SITE FOR GREENERY TO SOW TO AND GROW</h2>
             <p class="text-center">Sell or Buy your plants</p>
         </div>
     </div>

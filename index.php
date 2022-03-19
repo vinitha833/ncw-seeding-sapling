@@ -6,7 +6,7 @@
     <div class="container">
         <center>
             <div id="bannerContent">
-                <h1>Online purchase seedling and saplings to sow & grow</h1>
+                <h1>VIRTUAL OUTLET SITE FOR GREENERY TO SOW AND GROW</h1>
                 <p>Sell or Buy your plants</p>
                 <a href="products.php" class="btn btn-danger">Shop Now</a>
             </div>

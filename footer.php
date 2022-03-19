@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="container">
         <center>
-            <p>Copyright &copy <a href="index.php">SEEDING AND SLAPING</a> Store. All Rights Reserved.</p>
+            <p>Copyright &copy <a href="index.php">SEEDING AND SAPLING</a> Store. All Rights Reserved.</p>
             <?php if (isset($_SESSION['email'])) { ?>
                 <div class="sign-up-sec">
                     <a href="cart.php"><span class="fa fa-shopping-cart"></span> Cart</a>
