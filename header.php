@@ -47,10 +47,16 @@ require 'connection.php';
                 </li>
             <?php } else { ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="signup.php"><span class="fa fa-user-plus"></span> Sign Up</a>
+                    <a class="nav-link" href="signup.php?type=1"><span class="fa fa-user-plus"> Seller</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php"><span class="fa fa-sign-in"></span> Sign In</a>
+                    <a class="nav-link" href="signup.php?type=2"><span class="fa fa-user-plus"> Buyer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php"><span class="fa fa-sign-in"> Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin.php"><span class="fa fa-sign-in"> Admin Login</a>
                 </li>
             <?php } ?>
 
@@ -82,46 +88,86 @@ require 'connection.php';
             <h6 class="offcanvas-title d-sm-block" id="offcanvas">Menu</h6>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body px-0">
-            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
-                <li class="nav-item">
-                    <a href="account.php" class="nav-link text-truncate">
-                        <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">My Account</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="settings.php" class="nav-link text-truncate">
-                        <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">Change Password</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="orders.php" class="nav-link text-truncate">
-                        <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">Orders</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="sell-product.php" class="nav-link text-truncate">
-                        <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">Sell My Products</span>
-                    </a>
-                </li>
-                <?php if ($user_result['count'] > 0) { ?>
-                <li class="nav-item">
-                    <a href="my-product.php" class="nav-link text-truncate">
-                        <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">My Products</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="my-product-orders.php" class="nav-link text-truncate">
-                        <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">List of orders</span>
-                    </a>
-                </li>
-                <?php } ?>
-                <li class="nav-item">
-                    <a href="logout.php" class="nav-link text-truncate">
-                        <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">Logout</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+
+        <?php if ($_SESSION['id'] == 1) { ?>
+            <div class="offcanvas-body px-0">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
+                    <li class="nav-item">
+                        <a href="account.php" class="nav-link text-truncate">
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">My Account</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.php" class="nav-link text-truncate">
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">Change Password</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sell-product.php" class="nav-link text-truncate">
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">User Details</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="product-details.php" class="nav-link text-truncate">
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">Product Details</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="order-details.php" class="nav-link text-truncate">
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">Order Details</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="logout.php" class="nav-link text-truncate">
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        <?php } else { ?>
+            <div class="offcanvas-body px-0">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
+                    <li class="nav-item">
+                        <a href="account.php" class="nav-link text-truncate">
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">My Account</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.php" class="nav-link text-truncate">
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">Change Password</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="orders.php" class="nav-link text-truncate">
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">Orders</span>
+                        </a>
+                    </li>
+                    <?php if ($_SESSION['type'] == 1) { ?>
+                    <li class="nav-item">
+                        <a href="sell-product.php" class="nav-link text-truncate">
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">Sell My Products</span>
+                        </a>
+                    </li>
+                    <?php } ?>
+                    <?php if ($user_result['count'] > 0) { ?>
+                    <li class="nav-item">
+                        <a href="my-product.php" class="nav-link text-truncate">
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">My Products</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="my-product-orders.php" class="nav-link text-truncate">
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">List of orders</span>
+                        </a>
+                    </li>
+                    <?php } ?>
+                    <li class="nav-item">
+                        <a href="logout.php" class="nav-link text-truncate">
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        <?php } ?>
     </div>
     <?php } ?>

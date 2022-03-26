@@ -30,6 +30,7 @@
                 <div class="form-group">
                     <input type="text" class="form-control" name="address" placeholder="Address" required="true">
                 </div>
+                <input type="hidden" name="user_type" value="<?= isset($_GET['type']) ? $_GET['type'] : 2;?>">
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Sign Up">
                 </div>
