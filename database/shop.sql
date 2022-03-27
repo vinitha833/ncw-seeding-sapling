@@ -29,6 +29,7 @@ CREATE TABLE `items` (
   `description` text,
   `price` int NOT NULL,
   `image` text,
+  `added_on` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -57,6 +58,7 @@ CREATE TABLE `users` (
   `contact` varchar(255) NOT NULL,
   `city` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
+  `user_type` TINYINT(2) NOT NULL DEFAULT '2',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -67,7 +69,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'vini','vinikumarasamy@gmail.com','14e1b600b1fd579f47433b88e8d85291','9165063741','palladam','smp'),(2,'jagulin','jagulinmary02@gmail.com','14e1b600b1fd579f47433b88e8d85291','5656325698','palladam','address');
+INSERT INTO `users` VALUES (1,'admin','admin@gmail.com','14e1b600b1fd579f47433b88e8d85291','','','','1'),(2,'vini','vinikumarasamy@gmail.com','14e1b600b1fd579f47433b88e8d85291','9165063741','palladam','smp','1'),(3,'jagulin','jagulinmary02@gmail.com','14e1b600b1fd579f47433b88e8d85291','5656325698','palladam','address','1');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,6 +85,8 @@ CREATE TABLE `users_items` (
   `user_id` int NOT NULL,
   `item_id` int NOT NULL,
   `status` tinyint DEFAULT NULL,
+  `on_cart` VARCHAR(20) NOT NULL,
+  `on_order` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`,`item_id`),
   KEY `item_id` (`item_id`)

@@ -36,12 +36,21 @@ require 'connection.php';
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
             <?php if (isset($_SESSION['email'])) { ?>
+                <?php if ($_SESSION['id'] == 1) { ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="product-details.php"><span class="fa fa-shopping-bag"></span> Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="order-details.php"><span class="fa fa-shopping-cart"></span> Orders</a>
+                </li>
+                <?php } else { ?>
                 <li class="nav-item">
                     <a class="nav-link" href="products.php"><span class="fa fa-shopping-bag"></span> Shop</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="cart.php"><span class="fa fa-shopping-cart"></span> Cart</a>
                 </li>
+                <?php } ?>
                 <li class="nav-item" role="button">
                     <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"><span class="fa fa-cog fa-lg" ></span> Settings</a>
                 </li>
@@ -103,7 +112,7 @@ require 'connection.php';
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="sell-product.php" class="nav-link text-truncate">
+                        <a href="user-details.php" class="nav-link text-truncate">
                             <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">User Details</span>
                         </a>
                     </li>

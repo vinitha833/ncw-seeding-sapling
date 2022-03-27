@@ -13,11 +13,9 @@
         foreach ($user_item_result as $item) {
             $user_added_cart[] = $item['item_id'];
         }
-        
-        $produts_query = "SELECT * FROM `items` WHERE added_user_id != '$user_id' OR added_user_id IS NULL";
-    } else {
-        $produts_query = "SELECT * FROM `items`";
     }
+
+    $produts_query = "SELECT * FROM `items`";
     
     $produts_prepare = mysqli_query($con, $produts_query) or die(mysqli_error($con));
     $produts = mysqli_fetch_all($produts_prepare, MYSQLI_ASSOC);
@@ -35,7 +33,7 @@
         <?php if (empty($produts)) { ?>
             <div class="alert alert-info text-center mt-3">
                 <strong>Info!</strong> No products! <br>   
-                <a href="sell-product.php"><span class="fa fa-shopping-bag"></span> Sell my product</a>
+                <!-- <a href="sell-product.php"><span class="fa fa-shopping-bag"></span> Sell my product</a> -->
             </div>
         <?php } else { ?>
 
@@ -78,7 +76,7 @@
                             <?php } else { ?>
                                 <?php if(in_array($produts[$list-4]['id'], $user_added_cart)){ ?>
                                     <a href="#" class="btn btn-block btn-primary disabled">In cart</a>
-                                <?php } else { ?>
+                                <?php } else if ($_SESSION['id'] != $produts[$list-4]['added_user_id']) { ?>
                                     <a href="cart_add.php?id=<?=$produts[$list-4]['id']?>" class="btn btn-block btn-primary" name="add" value="add" class="btn btn-block btr-primary">Add to cart</a>
                                 <?php } ?>
                             <?php } ?>
@@ -122,7 +120,7 @@
                             <?php } else { ?>
                                 <?php if(in_array($produts[$list-3]['id'], $user_added_cart)){ ?>
                                     <a href="#" class="btn btn-block btn-primary disabled">In cart</a>
-                                <?php } else { ?>
+                                <?php } else if ($_SESSION['id'] != $produts[$list-3]['added_user_id']) { ?>
                                     <a href="cart_add.php?id=<?=$produts[$list-3]['id']?>" class="btn btn-block btn-primary" name="add" value="add" class="btn btn-block btr-primary">Add to cart</a>
                                 <?php } ?>
                             <?php } ?>
@@ -166,7 +164,7 @@
                             <?php } else { ?>
                                 <?php if(in_array($produts[$list-2]['id'], $user_added_cart)){ ?>
                                     <a href="#" class="btn btn-block btn-primary disabled">In cart</a>
-                                <?php } else { ?>
+                                <?php } else if ($_SESSION['id'] != $produts[$list-2]['added_user_id']) { ?>
                                     <a href="cart_add.php?id=<?=$produts[$list-2]['id']?>" class="btn btn-block btn-primary" name="add" value="add" class="btn btn-block btr-primary">Add to cart</a>
                                 <?php } ?>
                             <?php } ?>
@@ -210,7 +208,7 @@
                             <?php } else { ?>
                                 <?php if(in_array($produts[$list-1]['id'], $user_added_cart)){ ?>
                                     <a href="#" class="btn btn-block btn-primary disabled">In cart</a>
-                                <?php } else { ?>
+                                <?php } else if ($_SESSION['id'] != $produts[$list-1]['added_user_id']) { ?>
                                     <a href="cart_add.php?id=<?=$produts[$list-1]['id'];?>" class="btn btn-block btn-primary" name="add" value="add" class="btn btn-block btr-primary">Add to cart</a>
                                 <?php } ?>
                             <?php } ?>
