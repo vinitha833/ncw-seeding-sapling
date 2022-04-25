@@ -46,6 +46,8 @@
         </tbody>
     </table>
 </div>
+<br/>
+<br/>
 <?php } ?>
 
 <?php require 'footer.php';?>

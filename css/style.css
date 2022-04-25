@@ -130,7 +130,7 @@ html {
 .shoping-page .shop-sec .row .thumbnail img{width: 100% !important;height: 180px;}
 .shoping-page .prod-desc{height: 100px;overflow: scroll;text-align: left;}
 
-.cart-page {margin-top: 20px;}
+.cart-page {width: 100%;height: calc(100vh - 206px);overflow: scroll;}
 
 /* Password page CSS */
 .settings-page {margin-top: 20px;}

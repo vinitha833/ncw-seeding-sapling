@@ -41,7 +41,7 @@ require 'connection.php';
                     <a class="nav-link" href="product-details.php"><span class="fa fa-shopping-bag"></span> Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="order-details.php"><span class="fa fa-shopping-cart"></span> Orders</a>
+                    <a class="nav-link" href="order-details.php"><span class="fa fa-shopping-cart"></span> My Orders</a>
                 </li>
                 <?php } else { ?>
                 <li class="nav-item">
@@ -148,7 +148,7 @@ require 'connection.php';
                     </li>
                     <li class="nav-item">
                         <a href="orders.php" class="nav-link text-truncate">
-                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">Orders</span>
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-sm-inline">My Orders</span>
                         </a>
                     </li>
                     <?php if ($_SESSION['type'] == 1) { ?>
