@@ -21,7 +21,7 @@
 
 <?php if($no_of_user_products == 0) { ?>
 <div class="alert alert-info text-center mt-3">
-    <strong>Info!</strong> There is no producr you are added to sale! <br>   
+    <strong>Info!</strong> There is no product you are added to sale! <br>   
     <a href="products.php"><span class="fa fa-shopping-bag"></span> Shop now</a>
 </div>
 <?php } else { ?>
@@ -29,7 +29,11 @@
     <table class="table table-bordered table-striped">
         <tbody>
             <tr>
-                <th>Product</th><th>Product Name</th><th>Product Description</th><th>Price</th>
+                <th>Product</th>
+                <th>Product Name</th>
+                <th>Product Description</th>
+                <th>Price</th>
+                <th></th>
             </tr>
             <?php 
             $user_products_result=mysqli_query($con,$user_products_query) or die(mysqli_error($con));
@@ -39,8 +43,11 @@
                 
                 ?>
             <tr>
-                <td><?php echo $counter ?></td><td><?php echo $row['name']?></td><td><?php echo $row['description']?></td><td><?php echo $row['price']?></td>
-                <!-- <th><a href='cart_remove.php?id=<?php echo $row['id'] ?>&status=1'>Remove</a></th> -->
+                <td><?php echo $counter ?></td>
+                <td><?php echo $row['name']?></td>
+                <td><?php echo $row['description']?></td>
+                <td><?php echo $row['price']?></td>
+                <td><a href='remove_script.php?id=<?php echo $row['id'] ?>&type=items'>Remove</a></td>
             </tr>
             <?php $counter=$counter+1;}?>
         </tbody>

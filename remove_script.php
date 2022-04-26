@@ -10,7 +10,11 @@
        
         if ($table == 'items') {
             $_SESSION['alert'] = ['msg' => 'Product removed', 'alert-type' => 'alert-success'];
-            $redirect = 'product-details.php';
+            if ($_SESSION['id'] != 1) {
+                $redirect = 'products.php';
+            } else {
+                $redirect = 'product-details.php';
+            }
         } else if ($table == 'users') {
             $_SESSION['alert'] = ['msg' => 'User removed', 'alert-type' => 'alert-success'];
             $redirect = 'user-details.php';
